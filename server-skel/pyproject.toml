@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "vpnswitch"
+version = "0.1.0"
+description = "Python VPN Ethernet Switch Server"
+requires-python = ">=3.11"
+dependencies = [
+    "loguru>=0.7.3",
+    "typer>=0.9.0",
+]
+
+[project.scripts]
+vpnswitch = "vpnswitch.main:cli_main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/vpnswitch"]
+
+[tool.pyright]
+include = ["src"]
+pythonVersion = "3.11"
+
+[tool.ruff]
+src = ["src"]
+
+[dependency-groups]
+dev = [
+    "pyright>=1.1.408",
+    "pytest>=9.0.2",
+]
