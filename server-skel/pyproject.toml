@@ -8,6 +8,7 @@ version = "0.1.0"
 description = "Python VPN Ethernet Switch Server"
 requires-python = ">=3.11"
 dependencies = [
+    "icecream>=2.1.10",
     "loguru>=0.7.3",
     "typer>=0.9.0",
 ]

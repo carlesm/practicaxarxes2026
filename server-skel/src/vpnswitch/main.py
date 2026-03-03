@@ -10,13 +10,14 @@ from enum import Enum
 from pathlib import Path
 from typing import Optional
 
-import typer
 
 from loguru import logger
 
+from icecream import ic
+ic.disable()
 
+import typer
 app = typer.Typer()
-# log = logging.getLogger(__name__)
 
 
 class UnknownMacPolicy(str, Enum):
@@ -73,6 +74,7 @@ def main(
         stats_interval=config.stats_interval,
     )
 
+    ic(config)
     # TODO: Implementar el servidor. Creant una instància de una classe (VpnServer, per exemple) 
     # que encapsuli tota la lògica del servidor i cridar al seu mètode run() (exemple). 
     # Això ajudarà a mantenir el codi net i organitzat.
